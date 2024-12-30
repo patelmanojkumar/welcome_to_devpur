@@ -32,19 +32,22 @@
             <img src="main/images/IMG-20241113-WA0039.jpg" alt="Village Scene 4">
 <!--             <img src="main/images/IMG_20241114_161602.jpg" alt="Village Scene 5"> -->
         </section>
-        <section id="contact">
             <h2>Contact Us</h2>
-            <iframe 
-    src="https://docs.google.com/forms/d/e/1FAIpQLSfBvHK88ukb6SVXSPVMFbX1vszuGMRuKYSKI6prriLDo_AQQA/viewform?embedded=true" 
-    width="640" 
-    height="800" 
-    frameborder="0" 
-    marginheight="0" 
-    marginwidth="0">
-    Loading…
-</iframe>
+           <section id="contact">
+    <h2>Contact Us</h2>
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSfBvHK88ukb6SVXSPVMFbX1vszuGMRuKYSKI6prriLDo_AQQA/formResponse" method="POST" target="_self">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="entry.123456789" required>
 
-        </section>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="entry.987654321" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="entry.1122334455" rows="4" required></textarea>
+
+        <button type="submit">Send</button>
+    </form>
+</section>
     </main>
 <!--     <footer>
         <p>&copy; 2024 Devpur. All rights reserved.</p>
