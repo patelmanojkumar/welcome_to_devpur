@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Village Name</title>
+    <title>Devpur</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="main/images/favicon.ico" type="image/x-icon">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
     <header>
@@ -19,25 +21,36 @@
                 <li><a href="demography.html">Demography</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="notice-board.html">Notice Board</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h2>Welcome to world of Devpur</h2>
+        <h2>Welcome to Our Village Website</h2>
         <p>Explore the various aspects of our village through the navigation menu.</p>
         <section id="gallery">
             <h2>Gallery</h2>
-            <img src="main/images/AcdVsCorporate.jpg" alt="Village Scene 1">
-            <img src="main/images/AcdVsCorporate1.jpg" alt="Village Scene 2">
-            <img src="main/images/AcdVsCorporate2.jpg" alt="Village Scene 3">
-            <img src="main/images/Village.jpg" alt="Village Scene 4">
-            <img src="main/images/Village2.jpg" alt="Village Scene 5">
-            <img src="main/images/Village3.jpg" alt="Village Scene 6">
-             <img src="main/images/villtocorporate.webp" alt="Village Scene 7">
-            <img src="main/images/villtocorporate1.webp" alt="Village Scene 8">
-            <img src="main/images/villtocorporate2.webp" alt="Village Scene 9">
-
-
+            <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <img src="main/images/AcdVsCorporate.jpg" alt="Village Scene 1">
+                    <img src="main/images/AcdVsCorporate1.jpg" alt="Village Scene 2">
+                    <img src="main/images/AcdVsCorporate2.jpg" alt="Village Scene 3">
+                    <img src="main/images/Village.jpg" alt="Village Scene 4">
+                    <img src="main/images/Village2.jpg" alt="Village Scene 5">
+                    <img src="main/images/Village3.jpg" alt="Village Scene 6">
+                    <img src="main/images/villtocorporate.webp" alt="Village Scene 7">
+                    <img src="main/images/villtocorporate1.webp" alt="Village Scene 8">
+                    <img src="main/images/villtocorporate2.webp" alt="Village Scene 9">
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+        
     <section id="contact">
         <h2>Contact Us</h2>
         <form id="contact-form">
@@ -81,5 +94,21 @@
         <p>&copy; 2024 Devpur. All rights reserved.</p>
     </footer> -->
     <script src="scripts.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            loop: true,
+        });
+    </script>
 </body>
 </html>
