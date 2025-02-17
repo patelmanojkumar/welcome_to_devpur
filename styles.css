@@ -85,3 +85,49 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+/* Container styles */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+}
+
+.item {
+    flex: 1 1 200px; /* Grow, shrink, and base width */
+    margin: 10px;
+    background-color: #f4f4f4;
+    padding: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media queries for responsive design */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+
+    nav ul li {
+        display: inline-block;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        font-size: 18px;
+    }
+
+    .container {
+        padding: 2em;
+    }
+
+    .item {
+        margin: 20px;
+    }
+}
