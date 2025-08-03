@@ -15,37 +15,82 @@ header {
 nav ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
     margin: 0 10px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
 }
 
 main {
     padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h2 {
+    margin-top: 0;
 }
 
 section {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    background: #fff;
+    padding: 24px 18px 18px 18px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
+/* Gallery Section */
 #gallery .swiper-container {
     width: 100%;
     height: 400px;
+    margin-bottom: 0;
 }
 
-#gallery .swiper-slide img {
-    width: 100%;
-    height: 100%;
+.vertical-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.vertical-gallery img {
+    width: calc(33% - 12px);
+    height: 120px;
     object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.08);
 }
 
+@media (max-width: 800px) {
+    .vertical-gallery img {
+        width: calc(50% - 10px);
+        height: 100px;
+    }
+}
+
+@media (max-width: 500px) {
+    .vertical-gallery img {
+        width: 100%;
+        height: 80px;
+    }
+}
+
+/* Swiper navigation override to appear above images */
+.swiper-button-next, .swiper-button-prev, .swiper-pagination {
+    z-index: 5;
+}
+
+/* Contact Section */
 #contact form {
     display: flex;
     flex-direction: column;
@@ -53,27 +98,47 @@ section {
 
 #contact label {
     margin-top: 10px;
+    margin-bottom: 2px;
+    font-size: 15px;
+    font-weight: 500;
 }
 
-#contact input, #contact textarea {
+#contact input,
+#contact textarea {
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 15px;
+    background: #fafafa;
+}
+
+#contact textarea {
+    min-height: 80px;
+    resize: vertical;
 }
 
 #contact button {
-    margin-top: 10px;
-    padding: 10px;
+    margin-top: 15px;
+    padding: 12px;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.2s;
 }
 
 #contact button:hover {
     background-color: #45a049;
+}
+
+#response-message {
+    margin-top: 10px;
+    color: green;
+    font-weight: bold;
 }
 
 footer {
@@ -84,50 +149,21 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+    z-index: 10;
 }
 
-/* Container styles */
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1em;
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    main {
+        padding: 12px;
+    }
+    section {
+        padding: 14px 5px 10px 5px;
+    }
 }
 
-.item {
-    flex: 1 1 200px; /* Grow, shrink, and base width */
-    margin: 10px;
-    background-color: #f4f4f4;
-    padding: 1em;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive images */
 img {
     max-width: 100%;
     height: auto;
-}
-
-/* Media queries for responsive design */
-@media (min-width: 768px) {
-    .container {
-        flex-direction: row;
-    }
-
-    nav ul li {
-        display: inline-block;
-    }
-}
-
-@media (min-width: 1024px) {
-    body {
-        font-size: 18px;
-    }
-
-    .container {
-        padding: 2em;
-    }
-
-    .item {
-        margin: 20px;
-    }
+    display: block;
 }
